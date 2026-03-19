@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0f172a;
+  --color-accent: #5C735E;
+  --color-accent-dark: #4C5F4D;
+  --color-highlight: #6b8a6d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--color-primary);
+  background:
+    radial-gradient(circle at top left, rgba(92, 115, 94, 0.1), transparent 24%),
+    radial-gradient(circle at top right, rgba(76, 95, 77, 0.08), transparent 22%),
+    linear-gradient(180deg, #f8faf8 0%, #f8fafc 40%, #ffffff 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(92, 115, 94, 0.22);
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(92, 115, 94, 0.35);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.45rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4C5F4D;
+  backdrop-filter: blur(14px);
+}
+
+.section-kicker::before {
+  content: "";
+  height: 0.45rem;
+  width: 0.45rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #5C735E, #4C5F4D);
+}
+
+.hero-kicker {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+}
