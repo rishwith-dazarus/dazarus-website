@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { motion } from 'framer-motion'
-import { Linkedin, Mail } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { CheckCircle2, Linkedin, Mail, X } from 'lucide-react'
 import { useSearchParams } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
@@ -12,9 +12,8 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>(
-    'idle'
-  )
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
+  const [thanksOpen, setThanksOpen] = useState(false)
   const [emailOpen, setEmailOpen] = useState(false)
   const statusId = useId()
   const contactEmail = 'accounts@dazarus.com'
@@ -22,8 +21,7 @@ export function Contact() {
   const submitted = searchParams.get('submitted')
 
   useEffect(() => {
-    if (submitted === 'true') setSubmitStatus('success')
-    else setSubmitStatus('idle')
+    if (submitted === 'true') setThanksOpen(true)
   }, [submitted])
 
   const emailBody = useMemo(
@@ -31,25 +29,37 @@ export function Contact() {
     [email, message, name]
   )
 
+  function encodeNetlifyFormBody(form: HTMLFormElement): string {
+    const fd = new FormData(form)
+    const params = new URLSearchParams()
+    for (const [key, value] of fd.entries()) {
+      params.append(key, typeof value === 'string' ? value : value.name)
+    }
+    return params.toString()
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setSubmitting(true)
     setSubmitStatus('idle')
 
     try {
-      const formData = new FormData(e.currentTarget)
-
       const res = await fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: new URLSearchParams(formData as unknown as URLSearchParams).toString(),
+        body: encodeNetlifyFormBody(e.currentTarget),
       })
 
-      if (!res.ok) throw new Error('Netlify form submission failed')
+      // Netlify accepts form POSTs at the edge before SPA rewrites. With `/* /index.html 200`,
+      // the fetch response is often non-2xx HTML even when the submission is stored (see Netlify
+      // Forms + SPA guides — many examples only catch network errors, not `!res.ok`).
+      if (res.status >= 500) {
+        throw new Error('Netlify form submission failed')
+      }
 
-      setSubmitStatus('success')
+      setThanksOpen(true)
       setName('')
       setEmail('')
       setMessage('')
@@ -101,6 +111,7 @@ export function Contact() {
                   className="hidden"
                   tabIndex={-1}
                   autoComplete="off"
+                  aria-hidden
                 />
 
                 <p id={statusId} className="text-sm text-slate-500">
@@ -162,13 +173,6 @@ export function Contact() {
                     className="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3.5 text-slate-900 transition focus:border-[#5C735E] focus:outline-none focus:ring-2 focus:ring-[#5C735E]/20"
                   />
                 </div>
-
-                {submitStatus === 'success' && (
-                  <div className="mt-6 rounded-xl border border-[#5C735E]/30 bg-[#f0f7f0] px-4 py-3 text-sm text-slate-700">
-                    Thanks — your message has been sent. We’ll get back to you
-                    soon.
-                  </div>
-                )}
 
                 {submitStatus === 'error' && (
                   <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
@@ -272,6 +276,64 @@ export function Contact() {
         subject="Dazarus — New inquiry"
         body={emailBody}
       />
+
+      <AnimatePresence>
+        {thanksOpen && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 px-4 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            aria-hidden={!thanksOpen}
+            onClick={() => setThanksOpen(false)}
+          >
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="contact-thanks-title"
+              className="relative w-full max-w-md rounded-2xl border border-slate-200/80 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.18)]"
+              initial={{ opacity: 0, scale: 0.96, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 12 }}
+              transition={{ type: 'spring', damping: 24, stiffness: 320 }}
+              onClick={(ev) => ev.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setThanksOpen(false)}
+                className="absolute right-4 top-4 rounded-full p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                aria-label="Close"
+              >
+                <X className="h-5 w-5" aria-hidden />
+              </button>
+              <div className="flex flex-col items-center text-center">
+                <CheckCircle2
+                  className="h-14 w-14 text-[#5C735E]"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
+                <h2
+                  id="contact-thanks-title"
+                  className="mt-4 text-2xl font-bold tracking-tight text-slate-900"
+                >
+                  Message sent
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-slate-600">
+                  Thanks — we received your message. We’ll get back to you
+                  within 1–2 business days.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setThanksOpen(false)}
+                  className="mt-8 w-full rounded-full bg-[#5C735E] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#4C5F4D]"
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
