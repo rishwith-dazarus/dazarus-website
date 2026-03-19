@@ -1,7 +1,8 @@
-import { useId, useMemo, useState } from 'react'
+import { useEffect, useId, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Linkedin, Mail } from 'lucide-react'
+import { useSearchParams } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { EmailOptionsModal } from '../components/EmailOptionsModal'
@@ -17,43 +18,22 @@ export function Contact() {
   const [emailOpen, setEmailOpen] = useState(false)
   const statusId = useId()
   const contactEmail = 'accounts@dazarus.com'
+  const [searchParams] = useSearchParams()
+  const submitted = searchParams.get('submitted')
+
+  useEffect(() => {
+    if (submitted === 'true') setSubmitStatus('success')
+    else setSubmitStatus('idle')
+  }, [submitted])
 
   const emailBody = useMemo(
     () => `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`,
     [email, message, name]
   )
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
+  function handleSubmit(_e: React.FormEvent<HTMLFormElement>) {
     setSubmitting(true)
     setSubmitStatus('idle')
-
-    try {
-      // Prefer a deployed backend endpoint (Netlify Function). If not available (local dev),
-      // fall back to opening a pre-filled email draft.
-      const configured = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined
-      const endpoint =
-        configured && configured.trim().length > 0
-          ? configured
-          : '/.netlify/functions/contact'
-
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message }),
-      })
-
-      if (!res.ok) throw new Error('Contact endpoint failed')
-
-      setSubmitStatus('success')
-      setName('')
-      setEmail('')
-      setMessage('')
-    } catch {
-      setSubmitStatus('error')
-    } finally {
-      setSubmitting(false)
-    }
   }
 
   return (
@@ -78,10 +58,34 @@ export function Contact() {
               </p>
 
               <form
+                method="POST"
+                action="/contact"
+                name="contact"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="mt-12 rounded-2xl border border-slate-200/70 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#5C735E]/30 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] sm:p-10"
                 aria-describedby={statusId}
               >
+                {/* Netlify Forms success redirect */}
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="/contact?submitted=true"
+                />
+
+                {/* For JS-rendered SPAs: explicitly tell Netlify the form name */}
+                <input type="hidden" name="form-name" value="contact" />
+
+                {/* Honeypot field for bots (Netlify will reject if filled) */}
+                <input
+                  type="text"
+                  name="bot-field"
+                  className="hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+
                 <p id={statusId} className="text-sm text-slate-500">
                   We usually reply within 1–2 business days. We’ll only use your
                   details to respond to this message.
@@ -96,6 +100,7 @@ export function Contact() {
                   </label>
                   <input
                     id="contact-name"
+                    name="name"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -113,6 +118,7 @@ export function Contact() {
                   </label>
                   <input
                     id="contact-email"
+                    name="email"
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -130,6 +136,7 @@ export function Contact() {
                   </label>
                   <textarea
                     id="contact-message"
+                    name="message"
                     rows={5}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
