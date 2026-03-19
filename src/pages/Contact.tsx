@@ -31,9 +31,34 @@ export function Contact() {
     [email, message, name]
   )
 
-  function handleSubmit(_e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
     setSubmitting(true)
     setSubmitStatus('idle')
+
+    try {
+      const formData = new FormData(e.currentTarget)
+
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData as unknown as URLSearchParams).toString(),
+      })
+
+      if (!res.ok) throw new Error('Netlify form submission failed')
+
+      setSubmitStatus('success')
+      setName('')
+      setEmail('')
+      setMessage('')
+      e.currentTarget.reset()
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -59,7 +84,6 @@ export function Contact() {
 
               <form
                 method="POST"
-                action="/contact"
                 name="contact"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
@@ -67,13 +91,6 @@ export function Contact() {
                 className="mt-12 rounded-2xl border border-slate-200/70 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#5C735E]/30 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] sm:p-10"
                 aria-describedby={statusId}
               >
-                {/* Netlify Forms success redirect */}
-                <input
-                  type="hidden"
-                  name="redirect"
-                  value="/contact?submitted=true"
-                />
-
                 {/* For JS-rendered SPAs: explicitly tell Netlify the form name */}
                 <input type="hidden" name="form-name" value="contact" />
 
