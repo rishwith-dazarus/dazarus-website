@@ -43,29 +43,41 @@ export const handler = async (event: {
     return json(400, { error: 'Invalid message' })
   }
 
-  const resendApiKey = process.env.RESEND_API_KEY
-  if (!resendApiKey) {
+  const brevoApiKey = process.env.BREVO_API_KEY
+  if (!brevoApiKey) {
     return json(500, { error: 'Email provider not configured' })
   }
 
   const to = process.env.CONTACT_TO ?? 'accounts@dazarus.com'
-  const from = process.env.CONTACT_FROM ?? 'Dazarus <onboarding@resend.dev>'
+  const from = process.env.CONTACT_FROM ?? 'accounts@dazarus.com'
+  const senderName = process.env.CONTACT_SENDER_NAME ?? 'Dazarus'
 
   const subject = `New inquiry — ${name}`
   const text = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`
+  const html = `
+    <h2>New inquiry</h2>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Message:</strong></p>
+    <p>${message.replace(/\n/g, '<br/>')}</p>
+  `
 
-  const res = await fetch('https://api.resend.com/emails', {
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${resendApiKey}`,
+      'api-key': brevoApiKey,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from,
-      to,
+      sender: {
+        name: senderName,
+        email: from,
+      },
+      to: [{ email: to }],
       subject,
-      text,
-      reply_to: email,
+      textContent: text,
+      htmlContent: html,
+      replyTo: { email },
     }),
   })
 

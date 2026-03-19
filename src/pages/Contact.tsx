@@ -1,8 +1,7 @@
-import { useEffect, useId, useMemo, useState } from 'react'
+import { useId, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, Linkedin, Mail, X } from 'lucide-react'
-import { useSearchParams } from 'react-router-dom'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { EmailOptionsModal } from '../components/EmailOptionsModal'
@@ -12,60 +11,43 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
+  const [error, setError] = useState(false)
   const [thanksOpen, setThanksOpen] = useState(false)
   const [emailOpen, setEmailOpen] = useState(false)
   const statusId = useId()
   const contactEmail = 'accounts@dazarus.com'
-  const [searchParams] = useSearchParams()
-  const submitted = searchParams.get('submitted')
-
-  useEffect(() => {
-    if (submitted === 'true') setThanksOpen(true)
-  }, [submitted])
 
   const emailBody = useMemo(
     () => `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`,
     [email, message, name]
   )
 
-  function encodeNetlifyFormBody(form: HTMLFormElement): string {
-    const fd = new FormData(form)
-    const params = new URLSearchParams()
-    for (const [key, value] of fd.entries()) {
-      params.append(key, typeof value === 'string' ? value : value.name)
-    }
-    return params.toString()
-  }
-
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setSubmitting(true)
-    setSubmitStatus('idle')
+    setError(false)
 
     try {
-      const res = await fetch('/', {
+      const configured = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined
+      const endpoint =
+        configured && configured.trim().length > 0
+          ? configured
+          : '/.netlify/functions/contact'
+
+      const res = await fetch(endpoint, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: encodeNetlifyFormBody(e.currentTarget),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
       })
 
-      // Netlify accepts form POSTs at the edge before SPA rewrites. With `/* /index.html 200`,
-      // the fetch response is often non-2xx HTML even when the submission is stored (see Netlify
-      // Forms + SPA guides — many examples only catch network errors, not `!res.ok`).
-      if (res.status >= 500) {
-        throw new Error('Netlify form submission failed')
-      }
+      if (!res.ok) throw new Error('Server error')
 
       setThanksOpen(true)
       setName('')
       setEmail('')
       setMessage('')
-      e.currentTarget.reset()
     } catch {
-      setSubmitStatus('error')
+      setError(true)
     } finally {
       setSubmitting(false)
     }
@@ -93,27 +75,10 @@ export function Contact() {
               </p>
 
               <form
-                method="POST"
-                name="contact"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="mt-12 rounded-2xl border border-slate-200/70 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#5C735E]/30 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] sm:p-10"
                 aria-describedby={statusId}
               >
-                {/* For JS-rendered SPAs: explicitly tell Netlify the form name */}
-                <input type="hidden" name="form-name" value="contact" />
-
-                {/* Honeypot field for bots (Netlify will reject if filled) */}
-                <input
-                  type="text"
-                  name="bot-field"
-                  className="hidden"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden
-                />
-
                 <p id={statusId} className="text-sm text-slate-500">
                   We usually reply within 1–2 business days. We’ll only use your
                   details to respond to this message.
@@ -174,7 +139,7 @@ export function Contact() {
                   />
                 </div>
 
-                {submitStatus === 'error' && (
+                {error && (
                   <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
                     Something went wrong. Please try again, or email us at{' '}
                     <button
