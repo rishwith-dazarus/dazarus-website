@@ -4,11 +4,11 @@ import { ImagePlaceholder } from './ui/ImagePlaceholder'
 import whoWeWorkWithImg from '../assets/who-we-work-with.png'
 
 const AUDIENCES = [
-  'Startups and founders who need an MVP to validate and ship.',
-  'Teams that need a prototype before full-scale investment.',
-  'Companies building real products in robotics, medical equipment, or connected devices.',
-  'Businesses that need AI, web, or mobile applications built and shipped.',
-  'Organizations that need hardware or embedded prototyping and a partner to bring ideas to life.',
+  'We support founders who need a fast, reliable MVP to validate ideas and launch quickly.',
+  'For teams preparing for full scale investment, we design and build functional prototypes that demonstrate feasibility and impact.',
+  'Our expertise extends to companies developing real-world products, including robotics, medical equipment, and connected devices.',
+  'We also help businesses design, build, and deploy AI, web, and mobile applications.',
+  'From software to hardware and embedded systems, we act as a hands-on partner for the organizations to turn innovative ideas into tangible products.',
 ] as const
 
 const container = {
@@ -31,7 +31,7 @@ const listItem = {
 export function WhoWeWorkWith() {
   return (
     <section
-      className="w-full py-20 sm:py-24 lg:py-32"
+      className="w-full py-14 sm:py-16 lg:py-20"
       aria-labelledby="who-we-work-with-heading"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -47,11 +47,12 @@ export function WhoWeWorkWith() {
               id="who-we-work-with-heading"
               className="mt-5 text-4xl font-bold tracking-[-0.03em] text-slate-950 sm:text-5xl"
             >
-              Built for founders, startups, and teams with a product to ship.
+              Built for founders, startups and teams focused on delivering products successfully
             </h2>
             <p className="mt-4 text-lg leading-8 text-slate-600 sm:text-xl">
-              From MVP to prototype to production — we work with startups and
-              companies who need a partner to bring their product to life.
+              We partner with founders, startups, and product teams to turn
+              ideas into real, scalable products—from MVP to prototype to
+              production.
             </p>
             <motion.ul
               className="mt-10 space-y-4"

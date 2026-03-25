@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export function CTA() {
   return (
     <section
-      className="w-full py-20 sm:py-24 lg:py-32"
+      className="w-full py-14 sm:py-16 lg:py-20"
       aria-labelledby="cta-heading"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">

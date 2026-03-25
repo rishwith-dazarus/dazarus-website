@@ -56,7 +56,7 @@ export function WhatWeDo() {
 
   return (
     <section
-      className="w-full py-20 sm:py-24 lg:py-32"
+      className="w-full pt-10 pb-14 sm:pt-12 sm:pb-16 lg:pt-14 lg:pb-20"
       aria-labelledby="what-we-do-heading"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -65,11 +65,11 @@ export function WhatWeDo() {
             id="what-we-do-heading"
             className="mt-5 text-4xl font-bold tracking-[-0.03em] text-slate-950 sm:text-5xl md:text-6xl"
           >
-            Capabilities that turn ideas into products.
+            Expertise in transforming ideas into products.
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-600 sm:text-xl">
-            From concept to working product — we help founders and teams ship
-            software and prototypes.
+            From concept to launch, we help teams and founders deliver software
+            and prototypes.
           </p>
         </div>
 

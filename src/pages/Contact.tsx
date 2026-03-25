@@ -60,7 +60,7 @@ export function Contact() {
       </Helmet>
       <Navbar />
       <main className="pt-[72px]">
-        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16 lg:py-32 xl:px-20">
+        <section className="px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
           <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

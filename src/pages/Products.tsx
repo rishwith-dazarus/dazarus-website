@@ -12,7 +12,7 @@ const PRODUCTS = [
     slug: 'dazfin',
     title: 'Dazfin',
     description:
-      'A mobile app for receipt tracking and household finance management, designed to make personal expense capture and organization effortless.',
+      'A mobile app that helps track receipts and manage household finances, making it effortless to capture and organize your personal expenses.',
   },
   {
     slug: 'daresume',
@@ -39,7 +39,7 @@ export function ProductsPage() {
       </Helmet>
       <Navbar />
       <main className="pt-[72px]">
-        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16 lg:py-32 xl:px-20">
+        <section className="px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
           <h1 className="mt-5 max-w-4xl text-5xl font-bold tracking-[-0.03em] text-slate-900 sm:text-6xl md:text-7xl">
             Products
           </h1>

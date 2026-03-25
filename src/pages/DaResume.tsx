@@ -12,7 +12,7 @@ export function DaResume() {
       </Helmet>
       <Navbar />
       <main className="pt-[72px]">
-        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16 lg:py-32 xl:px-20">
+        <section className="px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
           <Link
             to="/products"
             className="text-sm font-medium text-slate-500 transition hover:text-[#4C5F4D]"
@@ -51,33 +51,39 @@ export function DaResume() {
               <ul className="mt-4 space-y-3 text-slate-600" role="list">
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  JD‑to‑resume generation in one click.
+                  One-Click JD-to-Resume Generation: Instantly generate tailored resumes from
+                  job descriptions in a single click.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Structured JD extraction (title, skills, highlights, and keywords distilled
-                  into a “JD gist”).
+                  Structured JD Extraction: Extract and structure key job details into a
+                  concise “JD Gist” (title, skills, highlights, and keywords).
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Evidence‑grounded summary and bullets with strong “don’t invent” guardrails.
+                  Evidence-Grounded Content: Create evidence-based summaries and bullet
+                  points with strict “do not invent” safeguards.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Company‑specific bullet generation for multiple experience buckets.
+                  Company-Specific Experience Mapping: Generate company-specific experience
+                  bullets across multiple roles and projects.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Optional Pinecone retrieval to match JD highlights with proven experience.
+                  Optional Semantic Retrieval (Pinecone Integration): Enhances accuracy by
+                  matching job description highlights with verified past experience using
+                  vector-based retrieval.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Editable resume editor + preview, with one‑click PDF export and saved
-                  artifacts.
+                  Editable Resume Builder with Live Preview: Edit and preview resumes in
+                  real time, with one-click PDF export and saved versions.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Full logs and artifacts for traceability, debugging, and iteration.
+                  Saved Artifacts & Debugging Logs: Access full logs and artifacts for
+                  transparency, debugging, and continuous iteration.
                 </li>
               </ul>
             </div>
@@ -88,19 +94,33 @@ export function DaResume() {
                 className="mt-4 space-y-3 list-decimal list-inside text-slate-600"
                 role="list"
               >
-                <li>User pastes the Job Description.</li>
-                <li>JD is distilled into structured requirements (title, keywords, highlights).</li>
+                <li>Add the Job Description: Start by pasting the target job description.</li>
                 <li>
-                  (Optional) Retrieval fetches relevant work evidence from the user’s document
-                  library (vector database).
+                  Extract Key Requirements: The system converts the job description into
+                  structured elements such as role title, core skills, and key highlights.
                 </li>
                 <li>
-                  AI generates a grounded Professional Summary and role‑aligned bullets for key
-                  experience sections.
+                  Retrieve Relevant Experience (Optional): Relevant work samples and
+                  experience are intelligently retrieved from your document library using
+                  advanced vector search.
                 </li>
-                <li>Static profile and dynamic content are merged.</li>
-                <li>Template rendering produces the final resume draft.</li>
-                <li>User edits and exports the resume to PDF.</li>
+                <li>
+                  AI-Powered Content Generation: Our AI creates a tailored professional
+                  summary and role-aligned bullet points for your key experience sections,
+                  ensuring relevance and impact.
+                </li>
+                <li>
+                  Seamless Content Integration: Existing static profile information is
+                  combined with dynamically generated content to form a cohesive narrative.
+                </li>
+                <li>
+                  Resume Template Rendering: The system formats the drafted information into
+                  a clean, professional template.
+                </li>
+                <li>
+                  Review, Edit & Export: Make final edits as needed and export your polished
+                  resume as a PDF.
+                </li>
               </ol>
             </div>
           </div>

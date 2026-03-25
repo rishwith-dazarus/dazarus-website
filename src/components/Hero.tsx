@@ -62,7 +62,7 @@ export function Hero() {
             className="mt-6 text-5xl font-bold leading-[1.02] tracking-[-0.04em] text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem]"
           >
             <motion.span className="block" variants={lineVariants} custom={0}>
-              Dazarus builds intelligent software
+              We build intelligent software
             </motion.span>
             <motion.span
               className="block bg-gradient-to-r from-[#8ba88d] via-[#a8c5aa] to-[#6b8a6d] bg-clip-text text-transparent"

@@ -162,7 +162,7 @@ export function Experience() {
 
   return (
     <section
-      className="w-full py-20 sm:py-24 lg:py-32"
+      className="w-full py-14 sm:py-16 lg:py-20"
       aria-labelledby="experience-heading"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -171,7 +171,7 @@ export function Experience() {
             id="experience-heading"
             className="mt-5 text-4xl font-bold tracking-[-0.03em] text-slate-950 sm:text-5xl md:text-6xl"
           >
-            Where we've shipped — and what we've learned.
+            From Shipping to Learning: Our Progress So Far
           </h2>
         </div>
 

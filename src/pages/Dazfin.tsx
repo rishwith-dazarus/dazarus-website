@@ -12,7 +12,7 @@ export function Dazfin() {
       </Helmet>
       <Navbar />
       <main className="pt-[72px]">
-        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16 lg:py-32 xl:px-20">
+        <section className="px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
           <Link
             to="/products"
             className="text-sm font-medium text-slate-500 transition hover:text-[#4C5F4D]"
@@ -27,8 +27,8 @@ export function Dazfin() {
           >
             <h1 className="mt-10 text-5xl font-bold tracking-[-0.03em] text-slate-900 sm:text-6xl">Dazfin</h1>
             <p className="mt-6 max-w-3xl text-xl leading-8 text-slate-600 sm:text-2xl">
-              A mobile app for receipt tracking and household finance management,
-              designed to make personal expense capture and organization effortless.
+              An AI-assisted expense management mobile app for organising and
+              managing household finances effortlessly.
             </p>
             <p className="mt-4 text-base text-slate-500">
               Pricing: Coming soon (public preview / demo project).
@@ -39,11 +39,11 @@ export function Dazfin() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900">Product overview</h2>
               <p className="mt-4 text-slate-600 leading-7">
-                Dazfin is a mobile app for personal receipt tracking and household
-                finance organization. It helps users quickly capture receipts (by
-                photo or manual entry), store them safely in the cloud, and manage
-                them anytime from their phone—so expense records stay organized,
-                searchable, and never get lost.
+                Dazfin is a mobile-first app that revolutionizes personal receipt
+                tracking and household finance management. By enabling fast
+                receipt capture—via photo or manual entry—and secure cloud
+                storage. Dazfin ensures users expense records are always
+                organized, searchable, and accessible anytime, anywhere.
               </p>
 
               <h3 className="mt-8 text-sm font-bold uppercase tracking-[0.18em] text-[#5C735E]">
@@ -52,15 +52,18 @@ export function Dazfin() {
               <ul className="mt-4 space-y-3 text-slate-600" role="list">
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Keeps all receipts in one place (no paper clutter)
+                  Eliminates paper clutter by consolidating all receipts in one
+                  digital hub
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Makes expense capture fast (snap a photo, upload, done)
+                  Accelerates expense capture with a simple snap-and-upload
+                  workflow
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Improves accuracy and consistency over time with optional automated extraction
+                  Boosts data accuracy and consistency with AI-powered
+                  automated extraction
                 </li>
               </ul>
             </div>
@@ -104,27 +107,34 @@ export function Dazfin() {
               <ul className="mt-4 space-y-3 text-slate-600" role="list">
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Smarter extraction: Better merchant/date/total detection, line-item parsing, improved confidence scoring
+                  Enhanced data extraction: Improved detection of merchant,
+                  date, totals, and line-item details with advanced confidence
+                  scoring
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Search &amp; filters: Find receipts by merchant, date range, amount, and category
+                  Advanced search &amp; filters: Quickly find receipts by
+                  merchant, date range, amount, or category
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Categories &amp; insights: Spending summaries by category/time, basic budgeting views
+                  Insights &amp; categorization: Spending summaries by category
+                  and time, with basic budgeting tools
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Review workflow: “Needs review” queue for low-confidence extractions
+                  Review workflows: “Needs review” queue for low-confidence
+                  extractions
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Exports: CSV/PDF export for personal records and sharing
+                  Export capabilities: CSV and PDF export options for
+                  record-keeping and sharing
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Polished UX: Faster uploads, offline-friendly draft saving, improved receipt timeline
+                  Refined user experience: Faster uploads, offline draft
+                  support, and an improved receipt timeline
                 </li>
               </ul>
             </div>

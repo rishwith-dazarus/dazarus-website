@@ -5,16 +5,16 @@ import dazfinProductImg from '../assets/dazfin-product.png'
 import daresumeHomeImg from '../assets/daresume-home.png'
 
 const DAZFIN_FEATURES = [
-  'Receipt capture',
-  'Expense categorization',
-  'Household finance tracking',
-  'AI-assisted expense organization and finance insights',
+  'Captures receipt',
+  'Categorizes expenses',
+  'Tracks household finances',
+  'AI-assisted expense management and financial insights',
 ]
 
 const DARESUME_FEATURES = [
-  'AI-guided resume creation',
-  'Job-specific resume optimization',
-  'Skill-based resume building',
+  'Creates AI guided resume',
+  'Optimizes job specific resume',
+  'Skill based resume building',
 ]
 
 const blockVariants = {
@@ -29,7 +29,7 @@ const blockVariants = {
 export function Products() {
   return (
     <section
-      className="w-full py-20 sm:py-24 lg:py-32"
+      className="w-full py-14 sm:py-16 lg:py-20"
       aria-labelledby="products-heading"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -72,9 +72,9 @@ export function Products() {
                 Dazfin
               </h3>
               <p className="mt-4 text-lg leading-8 text-slate-600">
-                A mobile app for receipt tracking and household finance
-                management, designed to make personal expense capture and
-                organization effortless.
+                A mobile app that helps track receipts and manage household
+                finances, making it effortless to capture and organize your
+                personal expenses.
               </p>
               <ul className="mt-6 space-y-3 text-slate-600" role="list">
                 {DAZFIN_FEATURES.map((feature) => (
@@ -112,9 +112,9 @@ export function Products() {
                 DaResume
               </h3>
               <p className="mt-4 text-lg leading-8 text-slate-600">
-                An AI-powered web application that helps professionals create
-                job-relevant resumes grounded in their actual experience, skills,
-                and career goals.
+                An AI-powered platform designed to help professionals build
+                targeted, job-ready resumes based on their authentic experience,
+                core skills, and career aspirations.
               </p>
               <ul className="mt-6 space-y-3 text-slate-600" role="list">
                 {DARESUME_FEATURES.map((feature) => (

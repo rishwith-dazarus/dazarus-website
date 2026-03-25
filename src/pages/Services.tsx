@@ -47,7 +47,7 @@ export function Services() {
       </Helmet>
       <Navbar />
       <main className="pt-[72px]">
-        <section className="px-6 py-20 sm:px-10 sm:py-24 lg:px-16 lg:py-32 xl:px-20">
+        <section className="px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
           <h1 className="max-w-4xl text-5xl font-bold tracking-[-0.03em] text-slate-900 sm:text-6xl md:text-7xl">
             What we build and prototype.
           </h1>
