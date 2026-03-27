@@ -56,25 +56,25 @@ export function WhatWeDo() {
 
   return (
     <section
-      className="w-full pt-10 pb-14 sm:pt-12 sm:pb-16 lg:pt-14 lg:pb-20"
+      className="w-full pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14"
       aria-labelledby="what-we-do-heading"
     >
-      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+      <div className="px-5 sm:px-10 lg:px-16 xl:px-20">
         <div className="text-left max-w-3xl">
           <h2
             id="what-we-do-heading"
-            className="mt-5 text-4xl font-bold tracking-[-0.03em] text-slate-950 sm:text-5xl md:text-6xl"
+            className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl md:text-6xl"
           >
             Expertise in transforming ideas into products.
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600 sm:text-xl">
+          <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-xl">
             From concept to launch, we help teams and founders deliver software
             and prototypes.
           </p>
         </div>
 
         <motion.div
-          className="mt-14 grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-6 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-8 lg:mt-12 lg:grid-cols-4"
           variants={container}
           initial="hidden"
           whileInView="visible"
@@ -111,8 +111,8 @@ export function WhatWeDo() {
                   ariaLabel={`${title} visual`}
                 />
               </div>
-              <div className="relative p-6 sm:p-7 min-h-[11rem]">
-                <h3 className="text-2xl font-bold text-slate-950 pr-4">
+              <div className="relative min-h-[10rem] p-5 sm:min-h-[11rem] sm:p-7">
+                <h3 className="pr-2 text-xl font-bold text-slate-950 sm:pr-4 sm:text-2xl">
                   {title}
                 </h3>
                 <AnimatePresence initial={false}>
@@ -122,9 +122,9 @@ export function WhatWeDo() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute inset-0 rounded-b-2xl bg-[#f0f7f0] border-t border-l-4 border-l-[#5C735E] border-slate-200/80 p-6 sm:p-7 pt-4 shadow-inner overflow-y-auto"
+                      className="absolute inset-0 overflow-y-auto rounded-b-2xl border-t border-l-4 border-l-[#5C735E] border-slate-200/80 bg-[#f0f7f0] p-5 pt-4 shadow-inner sm:p-7"
                     >
-                      <p className="text-base leading-7 text-slate-600">
+                      <p className="text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
                         {description}
                       </p>
                     </motion.div>

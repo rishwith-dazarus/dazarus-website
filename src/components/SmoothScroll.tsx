@@ -1,28 +1,42 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 
-export function SmoothScroll({ children }: { children: React.ReactNode }) {
+export function SmoothScroll({ children }: { children: ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null)
+  const rafIdRef = useRef<number | null>(null)
   const { pathname } = useLocation()
 
   useEffect(() => {
+    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const isDesktop = window.innerWidth >= 768
+
+    // Keep native scrolling on small viewports and reduced-motion environments.
+    if (!isDesktop || isReducedMotion) {
+      lenisRef.current = null
+      return
+    }
+
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.05,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 1.5,
-      wheelMultiplier: 0.9,
+      touchMultiplier: 0.95,
+      wheelMultiplier: 0.85,
     })
     lenisRef.current = lenis
 
     function raf(time: number) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafIdRef.current = requestAnimationFrame(raf)
     }
-    requestAnimationFrame(raf)
+    rafIdRef.current = requestAnimationFrame(raf)
 
     return () => {
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current)
+        rafIdRef.current = null
+      }
       lenis.destroy()
       lenisRef.current = null
     }

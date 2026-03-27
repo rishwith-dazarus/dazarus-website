@@ -140,7 +140,7 @@ function ExperienceCard({
           />
         </motion.div>
       </div>
-      <div className="relative p-6 sm:p-7">
+      <div className="relative p-5 sm:p-7">
         <motion.span
           variants={numberItem}
           className="text-xs font-bold tabular-nums tracking-[0.2em] text-[#5C735E]"
@@ -148,8 +148,8 @@ function ExperienceCard({
         >
           {number}
         </motion.span>
-        <h3 className="mt-3 text-xl font-bold text-slate-950">{title}</h3>
-        <p className="mt-3 text-base leading-7 text-slate-600 opacity-90 transition-opacity duration-200 group-hover:opacity-100">
+        <h3 className="mt-2 text-lg font-bold text-slate-950 sm:mt-3 sm:text-xl">{title}</h3>
+        <p className="mt-2 text-sm leading-6 text-slate-600 opacity-90 transition-opacity duration-200 group-hover:opacity-100 sm:mt-3 sm:text-base sm:leading-7">
           {description}
         </p>
       </div>
@@ -162,21 +162,21 @@ export function Experience() {
 
   return (
     <section
-      className="w-full py-14 sm:py-16 lg:py-20"
+      className="w-full py-10 sm:py-12 lg:py-14"
       aria-labelledby="experience-heading"
     >
-      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+      <div className="px-5 sm:px-10 lg:px-16 xl:px-20">
         <div className="text-left max-w-3xl">
           <h2
             id="experience-heading"
-            className="mt-5 text-4xl font-bold tracking-[-0.03em] text-slate-950 sm:text-5xl md:text-6xl"
+            className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl md:text-6xl"
           >
             From Shipping to Learning: Our Progress So Far
           </h2>
         </div>
 
         <motion.div
-          className="mt-14 grid gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-4"
+          className="mt-6 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2 lg:mt-12 xl:grid-cols-4"
           variants={container}
           initial="hidden"
           whileInView="visible"

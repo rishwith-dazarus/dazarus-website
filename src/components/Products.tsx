@@ -29,33 +29,33 @@ const blockVariants = {
 export function Products() {
   return (
     <section
-      className="w-full py-14 sm:py-16 lg:py-20"
+      className="w-full py-10 sm:py-12 lg:py-14"
       aria-labelledby="products-heading"
     >
-      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+      <div className="px-5 sm:px-10 lg:px-16 xl:px-20">
         <div className="grid gap-6 lg:grid-cols-[0.65fr_1.35fr] lg:items-end">
           <div>
             <h2
               id="products-heading"
-              className="mt-5 text-4xl font-bold tracking-[-0.03em] text-slate-950 sm:text-5xl md:text-6xl"
+              className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl md:text-6xl"
             >
               Products we build.
             </h2>
           </div>
-          <p className="max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl lg:text-2xl">
+          <p className="max-w-3xl text-base leading-7 text-slate-600 sm:text-xl lg:text-2xl">
             We ship our own products and partner on yours. Here's what we've
             built.
           </p>
         </div>
 
-        <div className="mt-14 space-y-8">
+        <div className="mt-6 space-y-5 sm:mt-10 sm:space-y-6 lg:mt-12">
           <motion.article
             custom={0}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={blockVariants}
-            className="group grid items-center gap-8 rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] hover:border-[#5C735E]/30 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-8"
+            className="group grid items-center gap-6 rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#5C735E]/30 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] sm:gap-8 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-8"
           >
             <div className="overflow-hidden rounded-xl">
               <ImagePlaceholder
@@ -68,15 +68,15 @@ export function Products() {
               <span className="rounded-full border border-[#5C735E]/40 bg-[#5C735E]/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#4C5F4D]">
                 Mobile product
               </span>
-              <h3 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:text-4xl">
+              <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-4 sm:text-4xl">
                 Dazfin
               </h3>
-              <p className="mt-4 text-lg leading-8 text-slate-600">
+              <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
                 A mobile app that helps track receipts and manage household
                 finances, making it effortless to capture and organize your
                 personal expenses.
               </p>
-              <ul className="mt-6 space-y-3 text-slate-600" role="list">
+              <ul className="mt-5 space-y-2.5 text-sm text-slate-600 sm:mt-6 sm:space-y-3 sm:text-base" role="list">
                 {DAZFIN_FEATURES.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
                     <span
@@ -89,7 +89,7 @@ export function Products() {
               </ul>
               <Link
                 to="/products/dazfin"
-                className="mt-8 inline-block rounded-full bg-slate-950 px-7 py-3.5 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
+                className="mt-6 inline-block rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg sm:mt-8 sm:px-7 sm:py-3.5 sm:text-base"
               >
                 Learn More
               </Link>
@@ -102,21 +102,21 @@ export function Products() {
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={blockVariants}
-            className="group grid items-center gap-8 rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] hover:border-[#5C735E]/30 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-8"
+            className="group grid items-center gap-6 rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#5C735E]/30 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] sm:gap-8 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-8"
           >
             <div className="order-2 lg:order-1">
               <span className="rounded-full border border-[#5C735E]/40 bg-[#5C735E]/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#4C5F4D]">
                 AI web product
               </span>
-              <h3 className="mt-4 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:text-4xl">
+              <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-4 sm:text-4xl">
                 DaResume
               </h3>
-              <p className="mt-4 text-lg leading-8 text-slate-600">
+              <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
                 An AI-powered platform designed to help professionals build
                 targeted, job-ready resumes based on their authentic experience,
                 core skills, and career aspirations.
               </p>
-              <ul className="mt-6 space-y-3 text-slate-600" role="list">
+              <ul className="mt-5 space-y-2.5 text-sm text-slate-600 sm:mt-6 sm:space-y-3 sm:text-base" role="list">
                 {DARESUME_FEATURES.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
                     <span
@@ -129,7 +129,7 @@ export function Products() {
               </ul>
               <Link
                 to="/products/daresume"
-                className="mt-8 inline-block rounded-full bg-slate-950 px-7 py-3.5 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
+                className="mt-6 inline-block rounded-full bg-slate-950 px-6 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg sm:mt-8 sm:px-7 sm:py-3.5 sm:text-base"
               >
                 Learn More
               </Link>

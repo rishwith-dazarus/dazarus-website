@@ -31,11 +31,11 @@ const listItem = {
 export function WhoWeWorkWith() {
   return (
     <section
-      className="w-full py-14 sm:py-16 lg:py-20"
+      className="w-full py-10 sm:py-12 lg:py-14"
       aria-labelledby="who-we-work-with-heading"
     >
-      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
-        <div className="grid items-center gap-8 rounded-2xl border border-slate-200/70 bg-white/90 p-6 shadow-[0_8px_30px_rgba(15,23,42,0.06)] sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-12">
+      <div className="px-5 sm:px-10 lg:px-16 xl:px-20">
+        <div className="grid items-center gap-6 rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.06)] sm:gap-8 sm:p-6 lg:grid-cols-[0.9fr_1.1fr] lg:p-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -45,17 +45,17 @@ export function WhoWeWorkWith() {
           >
             <h2
               id="who-we-work-with-heading"
-              className="mt-5 text-4xl font-bold tracking-[-0.03em] text-slate-950 sm:text-5xl"
+              className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl"
             >
               Built for founders, startups and teams focused on delivering products successfully
             </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-600 sm:text-xl">
+            <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-xl sm:leading-8">
               We partner with founders, startups, and product teams to turn
               ideas into real, scalable products—from MVP to prototype to
               production.
             </p>
             <motion.ul
-              className="mt-10 space-y-4"
+              className="mt-6 space-y-3 sm:mt-9 sm:space-y-4 lg:mt-10"
               role="list"
               variants={container}
               initial="hidden"
@@ -66,7 +66,7 @@ export function WhoWeWorkWith() {
                 <motion.li
                   key={audience}
                   variants={listItem}
-                  className="flex items-start gap-3 text-base leading-7 text-slate-700"
+                  className="flex items-start gap-3 text-sm leading-6 text-slate-700 sm:text-base sm:leading-7"
                 >
                   <span
                     className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]"
