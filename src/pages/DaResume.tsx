@@ -1,130 +1,134 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 
+/** Replace with the live DaResume URL when available. */
+const DA_RESUME_TRY_URL = '/contact'
+
+const keyFeatures = [
+  'Generate resumes directly from job descriptions',
+  'Extract key skills and requirements automatically',
+  'Create experience bullets aligned to the role',
+  'Maintain factual, evidence-based content',
+  'Export clean, ready-to-use resumes instantly',
+] as const
+
+const howItWorksSteps = [
+  'Paste the job description',
+  'Extract key requirements automatically',
+  'Generate a tailored resume using your experience',
+  'Review and export instantly',
+] as const
+
+function SectionTitle({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="mb-3 pt-1 text-[0.9375rem] font-bold uppercase tracking-[0.028em] text-slate-900 sm:text-base">
+      {children}
+    </h2>
+  )
+}
+
+function BulletList({ items }: { items: readonly string[] }) {
+  return (
+    <ul
+      className="space-y-2.5 text-[0.9375rem] leading-snug text-slate-800 sm:text-base sm:leading-relaxed sm:space-y-2.5"
+      role="list"
+    >
+      {items.map((item) => (
+        <li key={item} className="flex gap-3">
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#4C5F4D]" aria-hidden />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export function DaResume() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-[#fafafa] text-slate-900">
       <Helmet>
         <title>DaResume — Dazarus</title>
+        <meta
+          name="description"
+          content="DaResume is an AI resume builder that creates role-specific resumes from job descriptions—tailored, relevant, and ready to send."
+        />
       </Helmet>
       <Navbar />
       <main className="pt-[72px]">
-        <section className="px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
+        <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-6 lg:px-7">
           <Link
             to="/products"
-            className="text-sm font-medium text-slate-500 transition hover:text-[#4C5F4D]"
+            className="inline-block pt-6 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-[#4C5F4D] sm:pt-7"
           >
-            ← Back to Products
+            Back to Products
           </Link>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h1 className="mt-10 text-5xl font-bold tracking-[-0.03em] text-slate-900 sm:text-6xl">
-              DaResume — Evidence‑Grounded AI Resume Builder
-            </h1>
-            <p className="mt-6 max-w-3xl text-xl leading-8 text-slate-600 sm:text-2xl">
-              DaResume generates job‑specific resumes from a Job Description using grounded
-              AI, so every line stays aligned to the role and backed by real experience.
-            </p>
-          </motion.div>
-
-          <div className="mt-16 grid gap-12 lg:grid-cols-3">
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">Product overview</h2>
-              <p className="mt-4 text-slate-600 leading-7">
-                DaResume generates job‑specific resumes from a Job Description using grounded
-                AI. It extracts key role requirements, optionally retrieves matching evidence
-                from the candidate’s work library, and produces an editable resume draft with
-                one‑click PDF export. The goal is to reduce manual tailoring time while
-                keeping every line consistent, factual, and aligned to the JD.
+          <header className="grid grid-cols-1 items-start gap-0 pb-6 pt-4 md:grid-cols-[minmax(0,36rem)_1fr] md:gap-12 lg:gap-16 md:pb-7 md:pt-5">
+            <div className="max-w-xl">
+              <h1 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl sm:leading-[1.08] lg:text-5xl lg:leading-[1.06]">
+                DaResume — AI Resume Builder for Job-Ready Applications
+              </h1>
+              <p className="mt-5 text-lg font-semibold leading-snug text-slate-900 sm:text-xl sm:leading-snug">
+                Create role-specific resumes instantly from any job description — aligned, relevant, and ready
+                to send.
               </p>
+              <p className="mt-5 text-[0.9375rem] leading-relaxed text-slate-800 sm:text-base sm:leading-relaxed">
+                DaResume helps you generate tailored resumes that match real job requirements. It transforms job
+                descriptions into structured, high-quality resumes backed by your actual experience.
+              </p>
+              <div className="mt-7 sm:mt-8">
+                <Link
+                  to={DA_RESUME_TRY_URL}
+                  className="inline-flex min-h-[52px] items-center justify-center rounded-lg bg-[#4C5F4D] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_1px_3px_rgba(15,23,42,0.12)] transition duration-200 ease-out hover:scale-[1.02] hover:bg-[#3d4d3f] active:scale-[0.99] sm:text-[0.9375rem]"
+                >
+                  Try DaResume
+                </Link>
+              </div>
             </div>
+            <div className="hidden min-h-[120px] md:block" aria-hidden />
+          </header>
 
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">Key features</h2>
-              <ul className="mt-4 space-y-3 text-slate-600" role="list">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  One-Click JD-to-Resume Generation: Instantly generate tailored resumes from
-                  job descriptions in a single click.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Structured JD Extraction: Extract and structure key job details into a
-                  concise “JD Gist” (title, skills, highlights, and keywords).
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Evidence-Grounded Content: Create evidence-based summaries and bullet
-                  points with strict “do not invent” safeguards.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Company-Specific Experience Mapping: Generate company-specific experience
-                  bullets across multiple roles and projects.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Optional Semantic Retrieval (Pinecone Integration): Enhances accuracy by
-                  matching job description highlights with verified past experience using
-                  vector-based retrieval.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Editable Resume Builder with Live Preview: Edit and preview resumes in
-                  real time, with one-click PDF export and saved versions.
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]" aria-hidden />
-                  Saved Artifacts & Debugging Logs: Access full logs and artifacts for
-                  transparency, debugging, and continuous iteration.
-                </li>
-              </ul>
+          <section className="border-t border-slate-300/60 py-7 sm:py-8 md:py-9">
+            <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+              <div className="min-w-0 max-w-[700px]">
+                <SectionTitle>Overview</SectionTitle>
+                <p className="text-[0.9375rem] leading-relaxed text-slate-800 sm:text-base sm:leading-relaxed">
+                  DaResume is designed for people who want faster, smarter resume creation. Instead of manually
+                  editing resumes for every job, it generates a tailored version based on the job
+                  description—keeping everything aligned, structured, and relevant.
+                </p>
+              </div>
+              <div className="min-w-0 max-w-[700px]">
+                <SectionTitle>Key features</SectionTitle>
+                <BulletList items={keyFeatures} />
+              </div>
             </div>
+          </section>
 
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900">How it works</h2>
+          <section className="border-t border-slate-300/60 py-7 pb-12 sm:py-8 sm:pb-14 md:py-8 md:pb-16">
+            <div className="max-w-[44rem]">
+              <SectionTitle>How it works</SectionTitle>
               <ol
-                className="mt-4 space-y-3 list-decimal list-inside text-slate-600"
+                className="mt-0 space-y-2.5 text-[0.9375rem] leading-snug text-slate-800 sm:space-y-2.5 sm:text-base sm:leading-relaxed"
                 role="list"
               >
-                <li>Add the Job Description: Start by pasting the target job description.</li>
-                <li>
-                  Extract Key Requirements: The system converts the job description into
-                  structured elements such as role title, core skills, and key highlights.
-                </li>
-                <li>
-                  Retrieve Relevant Experience (Optional): Relevant work samples and
-                  experience are intelligently retrieved from your document library using
-                  advanced vector search.
-                </li>
-                <li>
-                  AI-Powered Content Generation: Our AI creates a tailored professional
-                  summary and role-aligned bullet points for your key experience sections,
-                  ensuring relevance and impact.
-                </li>
-                <li>
-                  Seamless Content Integration: Existing static profile information is
-                  combined with dynamically generated content to form a cohesive narrative.
-                </li>
-                <li>
-                  Resume Template Rendering: The system formats the drafted information into
-                  a clean, professional template.
-                </li>
-                <li>
-                  Review, Edit & Export: Make final edits as needed and export your polished
-                  resume as a PDF.
-                </li>
+                {howItWorksSteps.map((step, index) => (
+                  <li key={step} className="flex gap-3">
+                    <span
+                      className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200/90 text-xs font-bold text-slate-800"
+                      aria-hidden
+                    >
+                      {index + 1}
+                    </span>
+                    <span className="pt-0.5">{step}</span>
+                  </li>
+                ))}
               </ol>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
       <Footer />
     </div>
