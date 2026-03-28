@@ -3,11 +3,18 @@ import { motion, useMotionValue, useTransform, useReducedMotion } from 'framer-m
 import { ImagePlaceholder } from './ui/ImagePlaceholder'
 
 import healthcareSystemsImg from '../assets/healthcare-systems.png'
-import roboticsPrototypingImg from '../assets/robotics-prototyping.png'
+import roboticsPrototypingImg from '../assets/robotics-prototyping-experience.jpg'
 import embeddedSystemsImg from '../assets/embedded-systems.png'
 import endToEndProductImg from '../assets/end-to-end-product-development.png'
 
-const EXPERIENCE_ITEMS = [
+type ExperienceItem = {
+  title: string
+  description: string
+  image: string
+  imageAlt?: string
+}
+
+const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     title: 'Healthcare Systems',
     description:
@@ -19,6 +26,8 @@ const EXPERIENCE_ITEMS = [
     description:
       'Design and experimentation with robotics platforms, control systems, and prototype automation.',
     image: roboticsPrototypingImg,
+    imageAlt:
+      'Futuristic white humanoid robot in a meditative pose in a modern architectural space with a circular metallic backdrop and hexagonal window',
   },
   {
     title: 'Embedded Systems',
@@ -75,12 +84,14 @@ function ExperienceCard({
   title,
   description,
   image,
+  imageAlt,
   reducedMotion,
 }: {
   index: number
   title: string
   description: string
   image: string
+  imageAlt?: string
   reducedMotion: boolean
 }) {
   const cardRef = useRef<HTMLElement>(null)
@@ -135,8 +146,9 @@ function ExperienceCard({
         >
           <ImagePlaceholder
             src={image}
+            alt={imageAlt}
             className="aspect-[5/4] w-full transition-transform duration-500 group-hover:scale-105"
-            ariaLabel={`${title} image placeholder`}
+            ariaLabel={imageAlt ?? `${title} illustration`}
           />
         </motion.div>
       </div>
@@ -189,6 +201,7 @@ export function Experience() {
               title={item.title}
               description={item.description}
               image={item.image}
+              imageAlt={item.imageAlt}
               reducedMotion={!!reducedMotion}
             />
           ))}

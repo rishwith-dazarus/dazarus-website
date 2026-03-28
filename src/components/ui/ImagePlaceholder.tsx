@@ -5,12 +5,14 @@ interface ImagePlaceholderProps {
   ariaLabel?: string
   /** When provided, shows this image fitting inside the placeholder without cropping. */
   src?: string
+  alt?: string
 }
 
 export function ImagePlaceholder({
   className = '',
   ariaLabel = 'Image placeholder',
   src,
+  alt = '',
 }: ImagePlaceholderProps) {
   return (
     <motion.div
@@ -24,7 +26,7 @@ export function ImagePlaceholder({
       {src ? (
         <img
           src={src}
-          alt=""
+          alt={alt}
           className="absolute inset-0 h-full w-full object-cover object-center"
           loading="lazy"
           decoding="async"

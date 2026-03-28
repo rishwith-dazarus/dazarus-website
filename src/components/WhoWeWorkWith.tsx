@@ -4,11 +4,22 @@ import { ImagePlaceholder } from './ui/ImagePlaceholder'
 import whoWeWorkWithImg from '../assets/who-we-work-with.png'
 
 const AUDIENCES = [
-  'We support founders who need a fast, reliable MVP to validate ideas and launch quickly.',
-  'For teams preparing for full scale investment, we design and build functional prototypes that demonstrate feasibility and impact.',
-  'Our expertise extends to companies developing real-world products, including robotics, medical equipment, and connected devices.',
-  'We also help businesses design, build, and deploy AI, web, and mobile applications.',
-  'From software to hardware and embedded systems, we act as a hands-on partner for the organizations to turn innovative ideas into tangible products.',
+  {
+    title: 'Founders',
+    desc: 'Validate new ideas with a focused MVP.',
+  },
+  {
+    title: 'Startups',
+    desc: 'Move faster from concept to launch.',
+  },
+  {
+    title: 'Product Teams',
+    desc: 'Prototype, test, and refine with confidence.',
+  },
+  {
+    title: 'Businesses',
+    desc: 'Build AI, web, mobile, or hardware products with one reliable partner.',
+  },
 ] as const
 
 const container = {
@@ -47,12 +58,12 @@ export function WhoWeWorkWith() {
               id="who-we-work-with-heading"
               className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl"
             >
-              Built for founders, startups and teams focused on delivering products successfully
+              Built for teams turning ideas into products
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-xl sm:leading-8">
-              We partner with founders, startups, and product teams to turn
-              ideas into real, scalable products—from MVP to prototype to
-              production.
+              We partner with founders, startups, and product teams that need a
+              clear path from concept to MVP, prototype, and production-ready
+              build.
             </p>
             <motion.ul
               className="mt-6 space-y-3 sm:mt-9 sm:space-y-4 lg:mt-10"
@@ -62,9 +73,9 @@ export function WhoWeWorkWith() {
               whileInView="visible"
               viewport={{ once: true, margin: '-20px' }}
             >
-              {AUDIENCES.map((audience) => (
+              {AUDIENCES.map(({ title, desc }) => (
                 <motion.li
-                  key={audience}
+                  key={title}
                   variants={listItem}
                   className="flex items-start gap-3 text-sm leading-6 text-slate-700 sm:text-base sm:leading-7"
                 >
@@ -72,7 +83,10 @@ export function WhoWeWorkWith() {
                     className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[#5C735E]"
                     aria-hidden
                   />
-                  {audience}
+                  <div>
+                    <span className="font-semibold text-slate-900">{title}</span>
+                    <span className="mt-0.5 block text-slate-600">{desc}</span>
+                  </div>
                 </motion.li>
               ))}
             </motion.ul>

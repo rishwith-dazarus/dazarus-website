@@ -6,20 +6,28 @@ import servicesBanner from '../assets/services-banner.png'
 
 const SERVICE_CATEGORIES = [
   {
-    title: 'Product & Concept Prototyping',
-    desc: 'We take raw ideas through concept design and rapid prototyping so you can validate what should be built before committing full budget and teams.',
+    title: 'Product Concept Design',
+    desc: 'We turn early ideas into clear product concepts, feature direction, and practical scope so you know what to build first.',
   },
   {
-    title: 'AI‑Enabled & Application Development',
-    desc: 'We design and build AI‑enabled applications, from recommendation engines to copilots, including the front‑end and back‑end they run on.',
+    title: 'Manufacturing-Ready Design (DFM)',
+    desc: 'We refine designs for efficient manufacturing, helping reduce production risk, improve feasibility, and prepare your product for scale.',
   },
   {
-    title: 'Web & Mobile Product Engineering',
-    desc: 'We build web and mobile products that feel fast, stable, and ready for real users — from MVPs to production-ready releases.',
+    title: 'Rapid Prototyping',
+    desc: 'We build functional prototypes that help you test usability, validate assumptions, and improve the product before full development.',
   },
   {
-    title: 'Hardware, IoT & Embedded Systems',
-    desc: 'We design connected hardware, embedded systems, and supporting electronics — from PCB and firmware to connected prototypes for testing in the real world.',
+    title: 'AI Product Development',
+    desc: 'We create AI-powered products with smart workflows, copilots, and practical automation designed around real user needs.',
+  },
+  {
+    title: 'Web & Mobile App Development',
+    desc: 'We design and develop fast, user-friendly applications for web and mobile that are ready for launch and growth.',
+  },
+  {
+    title: 'Full-Stack Product Engineering',
+    desc: 'We build the complete product system, from frontend and backend to APIs, integrations, and deployment for reliable product delivery.',
   },
 ]
 
@@ -49,11 +57,11 @@ export function Services() {
       <main className="pt-[72px]">
         <section className="px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
           <h1 className="max-w-4xl text-5xl font-bold tracking-[-0.03em] text-slate-900 sm:text-6xl md:text-7xl">
-            What we build and prototype.
+            What We Provide
           </h1>
           <p className="mt-6 max-w-3xl text-xl leading-8 text-slate-600 sm:text-2xl">
-            We help teams move fast with MVPs, AI-enabled apps, and connected
-            prototypes built for real use.
+            We help teams design, prototype, and build products for real-world
+            use.
           </p>
 
           <div

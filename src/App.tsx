@@ -1,4 +1,4 @@
-import { useLocation, useRoutes } from 'react-router-dom'
+import { Navigate, useLocation, useRoutes } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { PageTransition } from './components/PageTransition'
 import { SmoothScroll } from './components/SmoothScroll'
@@ -7,7 +7,8 @@ import { ProductsPage } from './pages/Products'
 import { Dazfin } from './pages/Dazfin'
 import { DaResume } from './pages/DaResume'
 import { Services } from './pages/Services'
-import { Work } from './pages/Work'
+import { CaseStudies } from './pages/CaseStudies'
+import { CaseStudyDetail } from './pages/CaseStudyDetail'
 import { Contact } from './pages/Contact'
 
 const routes = [
@@ -16,7 +17,9 @@ const routes = [
   { path: '/products/dazfin', element: <Dazfin /> },
   { path: '/products/daresume', element: <DaResume /> },
   { path: '/services', element: <Services /> },
-  { path: '/work', element: <Work /> },
+  { path: '/case-studies', element: <CaseStudies /> },
+  { path: '/case-studies/:slug', element: <CaseStudyDetail /> },
+  { path: '/work', element: <Navigate to="/case-studies" replace /> },
   { path: '/contact', element: <Contact /> },
 ]
 
