@@ -11,25 +11,25 @@ const CARDS = [
   {
     title: 'Product Prototyping',
     description:
-      'We transform product ideas into working prototypes to validate concepts and technical architecture.',
+      'We turn product ideas into working prototypes to validate concepts and technical architecture.',
     image: productPrototypingImg,
   },
   {
-    title: 'AI-Enabled Applications',
+    title: 'AI-Powered Applications',
     description:
       'We build intelligent applications powered by modern AI, automation, and data systems.',
     image: aiEnabledApplicationsImg,
   },
   {
-    title: 'Mobile & Web Apps',
+    title: 'Web & Mobile Applications',
     description:
-      'Full-stack web and mobile applications designed for real-world scalability and performance.',
+      'We build full-stack web and mobile applications designed for real-world scalability and performance.',
     image: mobileWebAppsImg,
   },
   {
-    title: 'Hardware / Embedded Systems',
+    title: 'Hardware & Embedded Systems',
     description:
-      'We design connected prototypes and embedded systems for experimentation and product innovation.',
+      'We design connected prototypes and embedded systems for testing, iteration, and product innovation.',
     image: hardwareEmbeddedImg,
   },
 ] as const
@@ -65,11 +65,11 @@ export function WhatWeDo() {
             id="what-we-do-heading"
             className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl md:text-6xl"
           >
-            Expertise in transforming ideas into products.
+            How we turn ideas into products.
           </h2>
           <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-xl">
-            From concept to launch, we help teams and founders deliver software
-            and prototypes.
+            From concept to launch, we help founders and teams design, build, and validate
+            software and connected products.
           </p>
         </div>
 

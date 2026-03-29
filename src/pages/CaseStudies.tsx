@@ -46,8 +46,8 @@ export function CaseStudies() {
               variants={fadeUp}
               className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl sm:leading-relaxed"
             >
-              A selection of products we&apos;ve designed, built, and shipped — from early prototypes
-              to real-world deployments.
+              A selection of products we’ve designed, built, and shipped — from early prototypes
+              to real-world deployment
             </motion.p>
           </motion.div>
 

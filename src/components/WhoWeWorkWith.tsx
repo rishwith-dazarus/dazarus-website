@@ -18,7 +18,7 @@ const AUDIENCES = [
   },
   {
     title: 'Businesses',
-    desc: 'Build AI, web, mobile, or hardware products with one reliable partner.',
+    desc: 'Build AI, web, mobile, or hardware products with a reliable end-to-end partner.',
   },
 ] as const
 
@@ -58,12 +58,12 @@ export function WhoWeWorkWith() {
               id="who-we-work-with-heading"
               className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl"
             >
-              Built for teams turning ideas into products
+              Built for teams turning ideas into real products
             </h2>
             <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-xl sm:leading-8">
               We partner with founders, startups, and product teams that need a
-              clear path from concept to MVP, prototype, and production-ready
-              build.
+              clear path from concept to prototype, MVP, and production-ready
+              products.
             </p>
             <motion.ul
               className="mt-6 space-y-3 sm:mt-9 sm:space-y-4 lg:mt-10"

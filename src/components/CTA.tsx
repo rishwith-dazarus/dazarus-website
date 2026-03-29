@@ -27,15 +27,15 @@ export function CTA() {
               Have a Product Idea?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/80 sm:mt-5 sm:text-xl sm:leading-8">
-              Whether you're exploring a new product concept or looking to build
-              a working prototype, Dazarus can help bring your ideas to life.
+              Whether you're exploring a new product concept or ready to build a
+              working prototype, Dazarus can help turn your ideas into real products.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:mt-8 sm:gap-4">
               <Link
                 to="/contact"
                 className="rounded-full bg-white px-6 py-3 text-sm font-medium text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-100 hover:shadow-lg sm:px-8 sm:py-4 sm:text-base"
               >
-                Discuss a Product Idea
+                Discuss Your Product Idea
               </Link>
             </div>
           </div>

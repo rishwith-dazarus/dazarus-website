@@ -62,30 +62,30 @@ export const CASE_STUDIES: CaseStudy[] = [
     summary:
       'Mitra is Invento’s humanoid service robot for face-to-face engagement in hotels, clinics, and busy public spaces—where safety, uptime, and believable interaction matter as much as the technology demo.',
     projectOverview:
-      'The program targets a full humanoid robotics product: a machine people approach, talk to, and trust in real venues. The hard part is not a single feature—it is coherence across mechanics, perception, on-robot software, and field operations. Dazarus worked as a product and prototyping partner from early architecture through integration hardening: aligning the hardware stack with interaction design, shipping iterative builds, and supporting the path to repeatable production rather than one-off show units.',
+      'The program targeted a full humanoid robotics product: a machine people could approach, talk to, and trust in real venues. The hard part was not any single feature — it was coherence across mechanics, perception, on-robot software, and field operations. Dazarus worked as a product and prototyping partner from early architecture through integration hardening, aligning the hardware stack with interaction design, shipping iterative builds, and supporting the path to repeatable production rather than one-off show units.',
     overviewSupporting:
       'What made this hard: human-scale hardware in public spaces, safety and reliability expectations, and interaction that reads as capable—not theatrical. Mitra had to survive real venues, real foot traffic, and real operator workflows while the product definition was still tightening.',
     overviewSupportingTitle: 'Why it was hard',
     client: 'Invento Robotics',
     category: 'Robotics • AI • Product Development',
-    scope: 'Architecture through production readiness & deployment support',
+    scope: 'Architecture through production readiness and deployment support',
     completion: 'Production-ready units in live environments',
     ourRole: [
-      'Product & systems architecture',
+      'Product and systems architecture',
       'End-to-end prototype development and integration',
       'Human–machine interaction (voice, vision, on-robot behaviour)',
-      'Hardware / software co-design and test',
+      'Hardware and software co-design and testing',
       'Validation, documentation, and production handoff support',
     ],
     whatWeBuilt: [
       'Integrated humanoid platform: chassis, sensing, power, and compute as one shippable system',
-      'Multimodal interaction stack—speech, visual cues, and scripted venue workflows tuned for public floors',
+      'Multimodal interaction stack — speech, visual cues, and scripted venue workflows tuned for public environments',
       'Indoor navigation and obstacle handling calibrated for real building layouts',
       'Operator-facing configuration paths and update-friendly software structure for staged rollout',
       'Reliability cycles, traceability, and engineering package for manufacturing partners',
     ],
     outcome:
-      'Mitra moved from concept to production-capable robots operating in the wild—demonstrating that human-scale robotics can meet the same bar as serious consumer hardware: dependable interaction, maintainable software, and a credible path to scale.',
+      'Mitra moved from concept to production-capable robots operating in the wild — demonstrating that human-scale robotics can meet the same bar as serious consumer hardware: dependable interaction, maintainable software, and a credible path to scale.',
     gallerySubtitle: 'Field, studio, and system detail',
     gallery: [
       {
@@ -101,52 +101,52 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         src: mitraDeploymentImg,
         alt: 'Mitra robot in a large indoor expo hall with attendees in the background',
-        caption: 'Event & deployment environment',
+        caption: 'Deployment environment',
       },
       {
         src: mitraInterfaceImg,
         alt: 'Close-up of Mitra chest tablet showing on-robot UI and camera',
-        caption: 'Interface & on-robot interaction',
+        caption: 'On-robot interface and interaction',
       },
     ],
   },
   {
     slug: 'lovetopia',
     name: 'LoveTopia',
-    cardCategory: 'Retail Experience • Hardware • Prototype',
+    cardCategory: 'Retail Experience • Hardware • Product Prototyping',
     image: lovetopiaHeroImg,
     heroImageAlt:
       'LoveTopia orange and chrome capsule dispenser with glass chamber, glowing love topia signage and warm interior lighting',
-    tagline: 'Interactive retail prototype for immersive product engagement',
+    tagline: 'Interactive retail prototype designed for immersive product engagement',
     summary:
       'LoveTopia is a bespoke retail installation that turns a physical product story into something people can touch, trigger, and remember—built as a deployable prototype, not a render.',
     projectOverview:
-      'The brand needed more than signage: a tangible system that could dispense, surprise, and hold up under real foot traffic. The challenge was to compress industrial design, electromechanics, and firmware into a single experience that could ship, install, and run reliably on the sales floor. Dazarus translated the concept into a working product: mechanical design for the interaction, custom electronics, embedded control, and build quality suitable for customer-facing deployment.',
+      'The brand needed more than signage: a tangible system that could dispense, surprise, and hold up under real foot traffic. The challenge was to bring industrial design, electromechanics, and firmware together into a single experience that could ship, install, and run reliably on the sales floor. Dazarus translated the concept into a working product through mechanical design for the interaction, custom electronics, embedded control, and build quality suited for customer-facing deployment.',
     overviewSupporting:
-      'The constraint was retail reality: one cohesive electromechanical story with floor polish, service access for pilots, and firmware that could be tuned without spinning new hardware every week.',
+      'The constraint was retail reality: one cohesive electromechanical system with customer-facing polish, service access for pilots, and firmware that could be tuned without spinning new hardware every week.',
     overviewSupportingTitle: 'What made this hard',
     heroObjectPosition: 'object-[center_48%]',
     gallerySubtitle: 'Prototype build, retail context, and detail views',
     client: 'LoveTopia',
-    category: 'Retail Experience • Hardware • Prototype',
+    category: 'Retail Experience • Hardware • Product Prototyping',
     scope: 'Concept through field-ready prototype',
     completion: 'Deployed customer-facing prototype',
     ourRole: [
       'Experience and physical product design support',
       'Custom hardware prototype engineering',
-      'Embedded systems and motion / dispensing control',
+      'Embedded systems, motion control, and dispensing control',
       'Fabrication planning and assembly for trials',
       'On-site validation and iteration',
     ],
     whatWeBuilt: [
       'Electromechanical product core built around the brand’s intended ritual (dispense, reveal, reset)',
-      'Low-level control for motors, sensors, and safe failure modes in a public setting',
+      'Low-level control for motors, sensors, and safe failure modes in public environments',
       'PCB bring-up, firmware, and bench-to-floor debugging cycles',
       'Durable enclosure and internal layout for service access during pilots',
       'End-to-end build, test, and handoff so the client could run the unit in-market',
     ],
     outcome:
-      'LoveTopia shipped as a credible retail prototype: interactive, on-brand, and robust enough to prove the experience before committing to a larger hardware program.',
+      'LoveTopia shipped as a credible retail prototype: interactive, on-brand, and robust enough to validate the experience before committing to a larger hardware program.',
     gallery: [
       {
         src: lovetopiaRenderPrimaryImg,
@@ -167,36 +167,36 @@ export const CASE_STUDIES: CaseStudy[] = [
     image: spodHeroImg,
     heroImageAlt:
       'SPOD autonomous robot: white body with red top panel, front sensor band and SPOD branding on a neutral background',
-    tagline: 'Autonomous indoor delivery and utility robot',
+    tagline: 'Autonomous indoor robot for delivery and utility workflows',
     summary:
-      'SPOD is an autonomous indoor platform for moving goods and supporting operations in controlled environments—navigation, payload, and fleet-friendly software in one robotics product line.',
+      'SPOD is an autonomous indoor platform for moving goods and supporting operations in controlled environments — combining navigation, payload handling, and fleet-friendly software in one robotics product line.',
     projectOverview:
-      'Indoor delivery fails when navigation is brittle or the robot cannot share a building with people and infrastructure. SPOD was scoped as a versatile base: autonomous motion, a usable payload envelope, and connectivity for monitoring and tasking. Dazarus focused on prototyping the integrated robot—embedded control, autonomy stack integration, and the glue between hardware behaviour and cloud-side operations—so Invento could stress-test use cases before locking a single vertical.',
+      'Indoor delivery fails when navigation is brittle or when the robot cannot share a building with people and infrastructure. SPOD was scoped as a versatile base: autonomous motion, a usable payload envelope, and connectivity for monitoring and tasking. Dazarus focused on prototyping the integrated robot — embedded control, autonomy stack integration, and the glue between hardware behavior and cloud-side operations — so Invento could stress-test use cases before committing to a single vertical.',
     overviewSupporting:
-      'The tension was autonomy performance versus building reality—people, doorways, uneven floors, and operators who need visibility—while keeping the platform modular enough for parallel pilot configurations.',
+      'The tension was autonomy performance versus building reality — people, doorways, uneven floors, and operators who need visibility — while keeping the platform modular enough for parallel pilot configurations.',
     overviewSupportingTitle: 'What made this hard',
     heroObjectPosition: 'object-[center_40%]',
     gallerySubtitle: 'Platform, navigation, and integration views',
     client: 'Invento Robotics',
     category: 'Autonomous Systems • Robotics • IoT',
-    scope: 'Integrated prototype & system bring-up',
-    completion: 'Functional prototype & integration milestone',
+    scope: 'Integrated prototype and system bring-up',
+    completion: 'Functional prototype and integration milestone',
     ourRole: [
       'Robotics platform prototyping',
       'Embedded control, drivers, and sensor integration',
       'Autonomous navigation stack integration and tuning',
-      'Cloud-connected monitoring / command interfaces',
+      'Cloud-connected monitoring and command interfaces',
       'Hardware–software integration and test harnesses',
     ],
     whatWeBuilt: [
-      'Indoor autonomy loop with real-sensor inputs mapped to safe motion policies',
+      'Indoor autonomy loop with real sensor inputs mapped to safe motion policies',
       'Modular payload deck and mechanical interfaces for multiple trial configurations',
       'Edge firmware architecture for motor control, safety stops, and state reporting',
       'Lightweight cloud hooks for status, logs, and remote tasking during pilots',
-      'Repeatable bench and floor test procedures for regression before feature adds',
+      'Repeatable bench and floor test procedures for regression before new feature releases',
     ],
     outcome:
-      'SPOD exists as a flexible indoor robotics prototype—ready to anchor logistics, utility, or service workflows in controlled spaces, with engineering depth that supports the next product decision rather than a single demo path.',
+      'SPOD exists as a flexible indoor robotics prototype — ready to anchor logistics, utility, or service workflows in controlled spaces, with engineering depth that supports the next product decision rather than a single demo path.',
     gallery: [
       {
         src: spodStudioProductImg,

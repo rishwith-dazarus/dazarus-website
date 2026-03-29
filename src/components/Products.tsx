@@ -5,16 +5,16 @@ import dazfinProductImg from '../assets/dazfin-product.png'
 import daresumeHomeImg from '../assets/daresume-home.png'
 
 const DAZFIN_FEATURES = [
-  'Captures receipt',
+  'Captures receipts',
   'Categorizes expenses',
   'Tracks household finances',
-  'AI-assisted expense management and financial insights',
+  'Provides AI-assisted expense management and financial insights',
 ]
 
 const DARESUME_FEATURES = [
-  'Creates AI guided resume',
-  'Optimizes job specific resume',
-  'Skill based resume building',
+  'Builds AI-guided resumes',
+  'Optimizes resumes for specific roles',
+  'Builds resumes around skills and experience',
 ]
 
 const blockVariants = {
@@ -39,12 +39,12 @@ export function Products() {
               id="products-heading"
               className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl md:text-6xl"
             >
-              Products we build.
+              Products we've built.
             </h2>
           </div>
           <p className="max-w-3xl text-base leading-7 text-slate-600 sm:text-xl lg:text-2xl">
-            We ship our own products and partner on yours. Here's what we've
-            built.
+            We build our own products and partner with others to build theirs.
+            Here's what we've built.
           </p>
         </div>
 
@@ -65,15 +65,15 @@ export function Products() {
               />
             </div>
             <div>
-              <span className="rounded-full border border-[#5C735E]/40 bg-[#5C735E]/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#4C5F4D]">
-                Mobile product
+              <span className="rounded-full border border-[#5C735E]/40 bg-[#5C735E]/10 px-3 py-1 text-xs font-bold tracking-[0.18em] text-[#4C5F4D]">
+                Personal Finance App
               </span>
               <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-4 sm:text-4xl">
                 Dazfin
               </h3>
               <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
-                A mobile app that helps track receipts and manage household
-                finances, making it effortless to capture and organize your
+                A mobile app that helps users track receipts and manage household
+                finances, making it easy to capture, organize, and understand
                 personal expenses.
               </p>
               <ul className="mt-5 space-y-2.5 text-sm text-slate-600 sm:mt-6 sm:space-y-3 sm:text-base" role="list">
@@ -105,16 +105,16 @@ export function Products() {
             className="group grid items-center gap-6 rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#5C735E]/30 hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)] sm:gap-8 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-8"
           >
             <div className="order-2 lg:order-1">
-              <span className="rounded-full border border-[#5C735E]/40 bg-[#5C735E]/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#4C5F4D]">
-                AI web product
+              <span className="rounded-full border border-[#5C735E]/40 bg-[#5C735E]/10 px-3 py-1 text-xs font-bold tracking-[0.18em] text-[#4C5F4D]">
+                AI Resume Platform
               </span>
               <h3 className="mt-3 text-2xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-4 sm:text-4xl">
-                DaResume
+                DazHire
               </h3>
               <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-lg sm:leading-8">
                 An AI-powered platform designed to help professionals build
-                targeted, job-ready resumes based on their authentic experience,
-                core skills, and career aspirations.
+                targeted, job-ready resumes based on their real experience, core
+                skills, and career goals.
               </p>
               <ul className="mt-5 space-y-2.5 text-sm text-slate-600 sm:mt-6 sm:space-y-3 sm:text-base" role="list">
                 {DARESUME_FEATURES.map((feature) => (

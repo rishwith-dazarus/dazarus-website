@@ -68,7 +68,7 @@ export function Dazfin() {
                 Dazfin
               </h1>
               <p className="mt-5 text-xl font-semibold leading-snug text-slate-900 sm:text-2xl sm:leading-snug">
-                AI-assisted expense tracking for households and everyday spending.
+                AI-assisted expense tracking for households and personal spending.
               </p>
               <p className="mt-5 text-[0.9375rem] leading-relaxed text-slate-800 sm:mt-5 sm:text-base sm:leading-relaxed">
                 Dazfin helps individuals and families capture receipts, organize expenses, and keep personal

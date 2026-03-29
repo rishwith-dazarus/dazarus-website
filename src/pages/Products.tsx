@@ -12,13 +12,13 @@ const PRODUCTS = [
     slug: 'dazfin',
     title: 'Dazfin',
     description:
-      'A mobile app that helps track receipts and manage household finances, making it effortless to capture and organize your personal expenses.',
+      'A mobile app that helps users track receipts and manage household finances, making it easy to capture, organize, and understand personal expenses.',
   },
   {
     slug: 'daresume',
-    title: 'DaResume',
+    title: 'DazHire',
     description:
-      'An AI-powered web application that helps professionals create job-relevant resumes grounded in their actual experience, skills, and career goals.',
+      'An AI-powered web application that helps professionals create targeted, job-ready resumes grounded in their actual experience, skills, and career goals.',
   },
 ]
 

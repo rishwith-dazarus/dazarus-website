@@ -81,7 +81,7 @@ export function Contact() {
               >
                 <p id={statusId} className="text-sm text-slate-500">
                   We usually reply within 1–2 business days. We’ll only use your
-                  details to respond to this message.
+                  details to respond to your message.
                 </p>
 
                 <div className="mt-6">
@@ -199,7 +199,7 @@ export function Contact() {
               <div className="rounded-2xl border border-slate-200/70 bg-white p-8 shadow-[0_8px_30px_rgba(15,23,42,0.06)]">
                 <h3 className="text-xl font-bold text-slate-900">Contact Details</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-500">
-                  We usually reply within 1–2 business days.
+                  We reply within 1–2 business days.
                 </p>
                 <div className="mt-6 space-y-4 text-slate-600">
                   <p>
@@ -225,7 +225,7 @@ export function Contact() {
                   </p>
                 </div>
                 <p className="mt-6 text-sm leading-6 text-slate-500">
-                  We’ll only use your details to respond to this message.
+                  We’ll only use your details to respond to your message.
                 </p>
               </div>
             </motion.div>

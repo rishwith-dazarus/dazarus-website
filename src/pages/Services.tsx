@@ -11,7 +11,7 @@ const SERVICE_CATEGORIES = [
   },
   {
     title: 'Manufacturing-Ready Design (DFM)',
-    desc: 'We refine designs for efficient manufacturing, helping reduce production risk, improve feasibility, and prepare your product for scale.',
+    desc: 'We refine designs for efficient manufacturing to reduce production risk, improve feasibility, and prepare your product for scale.',
   },
   {
     title: 'Rapid Prototyping',
@@ -19,15 +19,15 @@ const SERVICE_CATEGORIES = [
   },
   {
     title: 'AI Product Development',
-    desc: 'We create AI-powered products with smart workflows, copilots, and practical automation designed around real user needs.',
+    desc: 'We create AI-powered products with smart workflows, assistants, and practical automation designed around real user needs.',
   },
   {
     title: 'Web & Mobile App Development',
-    desc: 'We design and develop fast, user-friendly applications for web and mobile that are ready for launch and growth.',
+    desc: 'We design and develop fast, user-friendly web and mobile applications that are ready for launch and growth.',
   },
   {
     title: 'Full-Stack Product Engineering',
-    desc: 'We build the complete product system, from frontend and backend to APIs, integrations, and deployment for reliable product delivery.',
+    desc: 'We build complete product systems, from frontend and backend to APIs, integrations, and deployment, for reliable delivery at scale.',
   },
 ]
 
@@ -60,8 +60,8 @@ export function Services() {
             What We Provide
           </h1>
           <p className="mt-6 max-w-3xl text-xl leading-8 text-slate-600 sm:text-2xl">
-            We help teams design, prototype, and build products for real-world
-            use.
+            We help teams design, prototype, and build products ready for
+            real-world use.
           </p>
 
           <div

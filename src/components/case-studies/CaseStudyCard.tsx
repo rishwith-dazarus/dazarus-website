@@ -47,7 +47,7 @@ export function CaseStudyCard({ slug, name, cardCategory, image, index }: CaseSt
             />
           </div>
           <div className="px-5 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500 transition-transform duration-[280ms] ease-in-out md:group-hover:-translate-y-0.5">
+            <p className="text-[11px] font-semibold tracking-[0.14em] text-slate-500 transition-transform duration-[280ms] ease-in-out md:group-hover:-translate-y-0.5">
               {cardCategory}
             </p>
             <h2 className="mt-2 text-xl font-bold tracking-[-0.02em] text-slate-900 transition-transform duration-[280ms] ease-in-out sm:text-2xl md:group-hover:-translate-y-0.5">

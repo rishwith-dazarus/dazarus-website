@@ -18,13 +18,13 @@ const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     title: 'Healthcare Systems',
     description:
-      'Development of software platforms supporting healthcare workflows, data systems, and medical integrations.',
+      'We develop software platforms that support healthcare workflows, data systems, and medical integrations.',
     image: healthcareSystemsImg,
   },
   {
     title: 'Robotics Prototyping',
     description:
-      'Design and experimentation with robotics platforms, control systems, and prototype automation.',
+      'We design and experiment with robotics platforms, control systems, and prototype automation.',
     image: roboticsPrototypingImg,
     imageAlt:
       'Futuristic white humanoid robot in a meditative pose in a modern architectural space with a circular metallic backdrop and hexagonal window',
@@ -32,13 +32,13 @@ const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     title: 'Embedded Systems',
     description:
-      'Development of connected devices and embedded platforms for product experimentation.',
+      'We develop connected devices and embedded platforms for prototyping and product validation.',
     image: embeddedSystemsImg,
   },
   {
     title: 'End-to-End Product Development',
     description:
-      'Taking product ideas from concept and architecture through early prototype and validation.',
+      'We take product ideas from concept through architecture, prototyping, and validation.',
     image: endToEndProductImg,
   },
 ] as const
@@ -183,8 +183,12 @@ export function Experience() {
             id="experience-heading"
             className="mt-2 text-3xl font-bold tracking-[-0.03em] text-slate-950 sm:mt-3 sm:text-5xl md:text-6xl"
           >
-            From Shipping to Learning: Our Progress So Far
+            What we've built across industries.
           </h2>
+          <p className="mt-3 text-base leading-7 text-slate-600 sm:mt-4 sm:text-xl">
+            From healthcare platforms to embedded systems, we help teams design,
+            prototype, and validate products in complex technical domains.
+          </p>
         </div>
 
         <motion.div

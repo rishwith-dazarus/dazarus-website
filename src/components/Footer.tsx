@@ -22,7 +22,7 @@ export function Footer() {
             Dazarus
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            © 2024 by Dazarus Private Limited
+            © 2024 Dazarus Private Limited.
           </p>
         </div>
 

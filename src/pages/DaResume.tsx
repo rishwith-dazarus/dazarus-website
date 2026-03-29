@@ -7,7 +7,7 @@ import { Footer } from '../components/Footer'
 const DA_RESUME_TRY_URL = '/contact'
 
 const keyFeatures = [
-  'Generate resumes directly from job descriptions',
+  'Generate tailored resumes directly from job descriptions',
   'Extract key skills and requirements automatically',
   'Create experience bullets aligned to the role',
   'Maintain factual, evidence-based content',
@@ -68,14 +68,14 @@ export function DaResume() {
           <header className="grid grid-cols-1 items-start gap-0 pb-6 pt-4 md:grid-cols-[minmax(0,36rem)_1fr] md:gap-12 lg:gap-16 md:pb-7 md:pt-5">
             <div className="max-w-xl">
               <h1 className="text-3xl font-bold tracking-[-0.04em] text-slate-950 sm:text-4xl sm:leading-[1.08] lg:text-5xl lg:leading-[1.06]">
-                DaResume — AI Resume Builder for Job-Ready Applications
+                DazHire — AI Resume Builder for Job-Ready Applications
               </h1>
               <p className="mt-5 text-lg font-semibold leading-snug text-slate-900 sm:text-xl sm:leading-snug">
                 Create role-specific resumes instantly from any job description — aligned, relevant, and ready
                 to send.
               </p>
               <p className="mt-5 text-[0.9375rem] leading-relaxed text-slate-800 sm:text-base sm:leading-relaxed">
-                DaResume helps you generate tailored resumes that match real job requirements. It transforms job
+                DazHire helps you generate tailored resumes that match real job requirements. It transforms job
                 descriptions into structured, high-quality resumes backed by your actual experience.
               </p>
               <div className="mt-7 sm:mt-8">
@@ -95,9 +95,9 @@ export function DaResume() {
               <div className="min-w-0 max-w-[700px]">
                 <SectionTitle>Overview</SectionTitle>
                 <p className="text-[0.9375rem] leading-relaxed text-slate-800 sm:text-base sm:leading-relaxed">
-                  DaResume is designed for people who want faster, smarter resume creation. Instead of manually
-                  editing resumes for every job, it generates a tailored version based on the job
-                  description—keeping everything aligned, structured, and relevant.
+                  DazHire is designed for people who want faster, smarter resume building. Instead of manually
+                  editing a resume for every job, it generates a tailored version based on the job description
+                  — keeping everything aligned, structured, and relevant.
                 </p>
               </div>
               <div className="min-w-0 max-w-[700px]">

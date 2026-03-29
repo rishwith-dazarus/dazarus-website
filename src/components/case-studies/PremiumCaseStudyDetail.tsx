@@ -290,10 +290,12 @@ export function PremiumCaseStudyDetail({ study }: Props) {
               <GalleryFigure slot={g1} supporting />
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
-            <GalleryFigure slot={g2} />
-            <GalleryFigure slot={g3} />
-          </div>
+          {(!isPlaceholder(g2) || !isPlaceholder(g3)) && (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-5">
+              {!isPlaceholder(g2) && <GalleryFigure slot={g2} />}
+              {!isPlaceholder(g3) && <GalleryFigure slot={g3} />}
+            </div>
+          )}
         </div>
       </motion.section>
 
