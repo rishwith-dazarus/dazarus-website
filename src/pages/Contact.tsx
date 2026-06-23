@@ -1,10 +1,11 @@
 import { useId, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { AnimatePresence, motion } from 'framer-motion'
-import { CheckCircle2, Linkedin, Mail, X } from 'lucide-react'
+import { CheckCircle2, Linkedin, Mail, MapPin, X } from 'lucide-react'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { EmailOptionsModal } from '../components/EmailOptionsModal'
+import { company } from '../data/company'
 
 export function Contact() {
   const [name, setName] = useState('')
@@ -15,7 +16,6 @@ export function Contact() {
   const [thanksOpen, setThanksOpen] = useState(false)
   const [emailOpen, setEmailOpen] = useState(false)
   const statusId = useId()
-  const contactEmail = 'accounts@dazarus.com'
 
   const emailBody = useMemo(
     () => `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`,
@@ -147,7 +147,7 @@ export function Contact() {
                       onClick={() => setEmailOpen(true)}
                       className="font-medium underline"
                     >
-                      {contactEmail}
+                      {company.email}
                     </button>
                     .
                   </div>
@@ -173,16 +173,31 @@ export function Contact() {
                     className="flex items-center gap-3 rounded-xl border border-slate-200/70 bg-slate-50 px-4 py-3 text-slate-700 transition hover:border-[#5C735E]/30"
                   >
                     <Mail className="h-5 w-5 text-[#5C735E]" aria-hidden />
-                    <span className="font-medium">{contactEmail}</span>
+                    <span className="font-medium">{company.email}</span>
                   </button>
                   <a
-                    href="https://linkedin.com/company/dazarus"
+                    href={company.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 rounded-xl border border-slate-200/70 bg-slate-50 px-4 py-3 text-slate-700 transition hover:border-[#5C735E]/30"
                   >
                     <Linkedin className="h-5 w-5 text-[#5C735E]" aria-hidden />
                     <span className="font-medium">LinkedIn</span>
+                  </a>
+                  <a
+                    href={company.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 rounded-xl border border-slate-200/70 bg-slate-50 px-4 py-3 text-slate-700 transition hover:border-[#5C735E]/30"
+                  >
+                    <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#5C735E]" aria-hidden />
+                    <span className="text-left font-medium">
+                      {company.formattedAddressLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
                   </a>
                 </div>
                 <p className="mt-4 text-sm text-slate-500">
@@ -209,18 +224,35 @@ export function Contact() {
                       className="inline-flex items-center gap-2 text-[#5C735E] hover:underline"
                     >
                       <Mail className="h-4 w-4" aria-hidden />
-                      <span className="font-medium">{contactEmail}</span>
+                      <span className="font-medium">{company.email}</span>
                     </button>
                   </p>
                   <p>
                     <a
-                      href="https://linkedin.com/company/dazarus"
+                      href={company.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-[#5C735E] hover:underline"
                     >
                       <Linkedin className="h-4 w-4" aria-hidden />
                       <span className="font-medium">LinkedIn</span>
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href={company.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-start gap-2 text-[#5C735E] hover:underline"
+                    >
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+                      <span className="font-medium">
+                        {company.formattedAddressLines.map((line) => (
+                          <span key={line} className="block">
+                            {line}
+                          </span>
+                        ))}
+                      </span>
                     </a>
                   </p>
                 </div>
@@ -237,7 +269,7 @@ export function Contact() {
       <EmailOptionsModal
         open={emailOpen}
         onClose={() => setEmailOpen(false)}
-        to={contactEmail}
+        to={company.email}
         subject="Dazarus — New inquiry"
         body={emailBody}
       />

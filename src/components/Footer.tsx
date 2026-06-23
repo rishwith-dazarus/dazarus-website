@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Linkedin, Mail } from 'lucide-react'
+import { company } from '../data/company'
 import { EmailOptionsModal } from './EmailOptionsModal'
 
 export function Footer() {
   const [emailOpen, setEmailOpen] = useState(false)
-  const contactEmail = 'accounts@dazarus.com'
 
   return (
     <motion.footer
@@ -22,8 +22,22 @@ export function Footer() {
             Dazarus
           </p>
           <p className="mt-2 text-sm text-slate-400">
-            © 2024 Dazarus Private Limited.
+            © 2024 {company.legalName}.
           </p>
+          <address className="mt-3 not-italic text-sm leading-6 text-slate-400">
+            <a
+              href={company.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+            >
+              {company.formattedAddressLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </a>
+          </address>
         </div>
 
         <div className="flex items-center gap-3 text-slate-400 sm:justify-end">
@@ -36,7 +50,7 @@ export function Footer() {
             <Mail className="h-5 w-5" aria-hidden />
           </button>
           <a
-            href="https://linkedin.com/company/dazarus"
+            href={company.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:bg-white/10 hover:text-white"
@@ -50,7 +64,7 @@ export function Footer() {
       <EmailOptionsModal
         open={emailOpen}
         onClose={() => setEmailOpen(false)}
-        to={contactEmail}
+        to={company.email}
         subject="Dazarus — New inquiry"
       />
     </motion.footer>
